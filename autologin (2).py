@@ -40,13 +40,20 @@ data = {
    
  }
 
-r = requests.get(url,params=data,headers=headers)
 
 reditList = r.history
 
+str_reditList=",".join(map(str,reditList))
 
 
-print(reditList[1].headers["Location"])
+
+
+if "<Response [302]>" in str_reditList:
+
+    print("您已联网！")
+
+input('源码简单！交流请联系QQ48846004！程序执行成功，按任意键退出：')
+
 
 
 
